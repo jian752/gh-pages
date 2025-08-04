@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>互動範例網站</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background: #f0f0f0;
+    }
+    h1 {
+      color: #333;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin-top: 20px;
+      cursor: pointer;
+      border-radius: 8px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    input {
+      padding: 8px;
+      margin-top: 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .message {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>歡迎來到我的互動網站 🎉</h1>
+  <input id="nameInput" type="text" placeholder="請輸入你的名字">
+  <br>
+  <button onclick="sayHello()">打招呼</button>
+  <div class="message" id="message"></div>
+
+  <script>
+    function sayHello() {
+      const name = document.getElementById('nameInput').value;
+      const messageDiv = document.getElementById('message');
+
+      if(name.trim() === '') {
+        messageDiv.textContent = '請先輸入名字喔！';
+        messageDiv.style.color = 'red';
+      } else {
+        messageDiv.textContent = `哈囉，${name}！歡迎來到我的網站！`;
+        messageDiv.style.color = 'blue';
+      }
+    }
+  </script>
+</body>
+</html>
